@@ -13,6 +13,8 @@
 		54B2DC601AB03B020057F736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B2DC5E1AB03B020057F736 /* LaunchScreen.xib */; };
 		54B2DC6C1AB03B020057F736 /* CustomButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC6B1AB03B020057F736 /* CustomButtonTests.swift */; };
 		54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC771AB044640057F736 /* ZCustomButton.swift */; };
+		54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC791AB06C250057F736 /* CustomUITextField.swift */; };
+		54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		54B2DC6A1AB03B020057F736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54B2DC6B1AB03B020057F736 /* CustomButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTests.swift; sourceTree = "<group>"; };
 		54B2DC771AB044640057F736 /* ZCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCustomButton.swift; sourceTree = "<group>"; };
+		54B2DC791AB06C250057F736 /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUiLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		54B2DC471AB03B020057F736 = {
 			isa = PBXGroup;
 			children = (
+				54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */,
+				54B2DC791AB06C250057F736 /* CustomUITextField.swift */,
 				54B2DC771AB044640057F736 /* ZCustomButton.swift */,
 				54B2DC521AB03B020057F736 /* CustomButton */,
 				54B2DC681AB03B020057F736 /* CustomButtonTests */,
@@ -211,9 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */,
 				54B2DC581AB03B020057F736 /* ViewController.swift in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
+				54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
