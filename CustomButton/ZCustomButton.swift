@@ -19,9 +19,6 @@ class ZCustomButton: UIButton {
     */
     class func ZzoviButton(frame:CGRect, color:UIColor, view:UIView)->UIButton {
         let zoviCustomButton = UIButton()
-//        if frame == nil {
-//            frame = CGRectMake(100, 100, 200, 100);
-//        }
          zoviCustomButton.frame = frame
         zoviCustomButton.backgroundColor = color
         view.addSubview(zoviCustomButton)
