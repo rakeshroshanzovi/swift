@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         var dic:[String:AnyObject] = ["frame":NSValue(CGRect:CGRectMake(20, 300, 300, 50)),"placeholder":"rakesh","view":self]
 
          CustomUITextField.customTextField(dic)
-        var labelDic:[String:AnyObject] = ["frame":NSValue(CGRect:CGRectMake(20, 380, 300, 50)),"backgroundcolor":UIColor.greenColor(),"view":self,"text":"Zovi label"];
+        var labelDic:[String:AnyObject] = ["frame":NSValue(CGRect:CGRectMake(20, 380, 300, 50)),"view":self.view,"text":"Zovi label"];
         CustomUiLabel.zoviCustomLabel(labelDic)
     }
 

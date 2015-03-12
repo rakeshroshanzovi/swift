@@ -15,6 +15,8 @@
 		54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC771AB044640057F736 /* ZCustomButton.swift */; };
 		54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC791AB06C250057F736 /* CustomUITextField.swift */; };
 		54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */; };
+		54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */; };
+		54B2DC821AB14F520057F736 /* SwiftTryCatch.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		54B2DC771AB044640057F736 /* ZCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCustomButton.swift; sourceTree = "<group>"; };
 		54B2DC791AB06C250057F736 /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUiLabel.swift; sourceTree = "<group>"; };
+		54B2DC7D1AB14F510057F736 /* CustomButton-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomButton-Bridging-Header.h"; sourceTree = "<group>"; };
+		54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftTryCatch.h; sourceTree = "<group>"; };
+		54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftTryCatch.m; sourceTree = "<group>"; };
+		54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftTryCatch.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,10 @@
 				54B2DC521AB03B020057F736 /* CustomButton */,
 				54B2DC681AB03B020057F736 /* CustomButtonTests */,
 				54B2DC511AB03B020057F736 /* Products */,
+				54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */,
+				54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */,
+				54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */,
+				54B2DC7D1AB14F510057F736 /* CustomButton-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B2DC601AB03B020057F736 /* LaunchScreen.xib in Resources */,
+				54B2DC821AB14F520057F736 /* SwiftTryCatch.podspec in Resources */,
 				54B2DC5D1AB03B020057F736 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */,
+				54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */,
 				54B2DC581AB03B020057F736 /* ViewController.swift in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
@@ -336,9 +348,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CustomButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomButton-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +361,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CustomButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomButton-Bridging-Header.h";
 			};
 			name = Release;
 		};
