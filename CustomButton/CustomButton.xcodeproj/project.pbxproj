@@ -17,6 +17,7 @@
 		54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */; };
 		54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */; };
 		54B2DC821AB14F520057F736 /* SwiftTryCatch.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */; };
+		54B2DC851AB1A55B0057F736 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC841AB1A55B0057F736 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftTryCatch.h; sourceTree = "<group>"; };
 		54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftTryCatch.m; sourceTree = "<group>"; };
 		54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftTryCatch.podspec; sourceTree = "<group>"; };
+		54B2DC831AB1A55B0057F736 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		54B2DC841AB1A55B0057F736 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +72,13 @@
 		54B2DC471AB03B020057F736 = {
 			isa = PBXGroup;
 			children = (
+				54B2DC861AB1A58B0057F736 /* AppleSdk */,
 				54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */,
 				54B2DC791AB06C250057F736 /* CustomUITextField.swift */,
 				54B2DC771AB044640057F736 /* ZCustomButton.swift */,
 				54B2DC521AB03B020057F736 /* CustomButton */,
 				54B2DC681AB03B020057F736 /* CustomButtonTests */,
 				54B2DC511AB03B020057F736 /* Products */,
-				54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */,
-				54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */,
 				54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */,
 				54B2DC7D1AB14F510057F736 /* CustomButton-Bridging-Header.h */,
 			);
@@ -126,6 +128,17 @@
 				54B2DC6A1AB03B020057F736 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54B2DC861AB1A58B0057F736 /* AppleSdk */ = {
+			isa = PBXGroup;
+			children = (
+				54B2DC831AB1A55B0057F736 /* Reachability.h */,
+				54B2DC841AB1A55B0057F736 /* Reachability.m */,
+				54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */,
+				54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */,
+			);
+			name = AppleSdk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +244,7 @@
 				54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */,
 				54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */,
 				54B2DC581AB03B020057F736 /* ViewController.swift in Sources */,
+				54B2DC851AB1A55B0057F736 /* Reachability.m in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
 				54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */,
