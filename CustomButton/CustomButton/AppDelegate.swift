@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var connectionAvail:CInt = CInt()
 
     var location:ZLocation = ZLocation()
+    var time:CGFloat = 600.0
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        // Override point for customization after application launch.
         MTReachabilityManager.sharedManager()
@@ -25,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController;
         window!.makeKeyAndVisible()
         location.initLocationManager()
-        location.sendLocationUpdateafterEvery(600)
+        location.sendLocationUpdateafterEvery(600.0)
         return true
     }
 
@@ -51,8 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         location.toStopTimer()
-//        location.backgroundActivity(5.0)
-        location.forSignificantLocationChange()
+        location.backgroundActivity(600.0)
+//        location.forSignificantLocationChange()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -62,11 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         location.toStopTimer()
-        location.sendLocationUpdateafterEvery(600)
+        location.sendLocationUpdateafterEvery(600.0)
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        location.forSignificantLocationChange()
     }
 
 

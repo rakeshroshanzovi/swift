@@ -46,16 +46,27 @@ class ZLocation: NSObject,CLLocationManagerDelegate {
             var locationObj = locationArray.lastObject as CLLocation
             var coord = locationObj.coordinate
             
+        
+        
+        if locationFixAchieved == true {
             println(coord.latitude)
             println(coord.longitude)
             ZlocationManager = manager
-        self.hitServerWithData()
-        if locationFixAchieved == true {
+            self.hitServerWithData()
         manager.stopUpdatingLocation()
         }
     }
     
+    func locationManager(manager: CLLocationManager!,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            
+            // App may no longer be authorized to obtain location
+            //information. Check status here and respond accordingly.
+            
+    }
+    
     func hitServerWithData() {
+        locationFixAchieved = false
         var param:[String:AnyObject] = ["action":"location","latitude":ZlocationManager.location.coordinate.latitude,"longitude":ZlocationManager.location.coordinate.longitude]
         var connection:ZConnection = ZConnection( requestUrl: "http://54.179.30.135/trace", type: "GET", withParam: param)
         connection.processRequsetWithCompletion({ (recieveddata:NSData!,httpStatusCode:NSInteger) in
@@ -85,18 +96,15 @@ class ZLocation: NSObject,CLLocationManagerDelegate {
     }
     
     func updateInBackGround(timer: NSTimer) {
-        
+         locationFixAchieved = true
         ZlocationManager.delegate = self
         ZlocationManager.desiredAccuracy = kCLLocationAccuracyBest
         ZlocationManager.requestAlwaysAuthorization()
-        ZlocationManager.startMonitoringSignificantLocationChanges()
+        ZlocationManager.startUpdatingLocation()
     }
     
     
     func forSignificantLocationChange(){
-        backgroundTaskIdentifier = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({
-            UIApplication.sharedApplication().endBackgroundTask(self.backgroundTaskIdentifier!)
-        })
         locationFixAchieved = false
         ZlocationManager.delegate = self
         ZlocationManager.desiredAccuracy = kCLLocationAccuracyBest
