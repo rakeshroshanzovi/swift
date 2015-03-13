@@ -72,10 +72,8 @@
 		54B2DC471AB03B020057F736 = {
 			isa = PBXGroup;
 			children = (
-				54B2DC861AB1A58B0057F736 /* AppleSdk */,
-				54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */,
-				54B2DC791AB06C250057F736 /* CustomUITextField.swift */,
-				54B2DC771AB044640057F736 /* ZCustomButton.swift */,
+				98BC51AF1AB2B7C7000DE4A8 /* handlers */,
+				98BC51AD1AB2B776000DE4A8 /* UIControls */,
 				54B2DC521AB03B020057F736 /* CustomButton */,
 				54B2DC681AB03B020057F736 /* CustomButtonTests */,
 				54B2DC511AB03B020057F736 /* Products */,
@@ -130,15 +128,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		54B2DC861AB1A58B0057F736 /* AppleSdk */ = {
+		54B2DC861AB1A58B0057F736 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
 				54B2DC831AB1A55B0057F736 /* Reachability.h */,
 				54B2DC841AB1A55B0057F736 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		98BC51AD1AB2B776000DE4A8 /* UIControls */ = {
+			isa = PBXGroup;
+			children = (
+				54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */,
+				54B2DC771AB044640057F736 /* ZCustomButton.swift */,
+				54B2DC791AB06C250057F736 /* CustomUITextField.swift */,
+			);
+			name = UIControls;
+			sourceTree = "<group>";
+		};
+		98BC51AE1AB2B7B4000DE4A8 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
 				54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */,
 				54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */,
 			);
-			name = AppleSdk;
+			name = Exception;
+			sourceTree = "<group>";
+		};
+		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
+			isa = PBXGroup;
+			children = (
+				98BC51AE1AB2B7B4000DE4A8 /* Exception */,
+				54B2DC861AB1A58B0057F736 /* Reachability */,
+			);
+			name = handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +460,7 @@
 				54B2DC711AB03B020057F736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54B2DC721AB03B020057F736 /* Build configuration list for PBXNativeTarget "CustomButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +469,7 @@
 				54B2DC741AB03B020057F736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
