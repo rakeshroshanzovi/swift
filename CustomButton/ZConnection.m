@@ -59,7 +59,6 @@
         NSMutableURLRequest *req;
         NSData *requestData = nil;
         req = [[ NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:TIMEOUT];
-//        req = [[ NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:nil timeoutInterval:20.0];
         [req setHTTPMethod:@"POST"];
         [req setHTTPShouldHandleCookies:YES];
         [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -68,7 +67,6 @@
         requestData = [NSJSONSerialization dataWithJSONObject:param
                                                            options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                              error:&error];
-         NSString *authCooke = [[NSString alloc] initWithData:requestData encoding:NSASCIIStringEncoding] /*stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"*/;
         if (!error) {
             [req setHTTPBody:requestData];
         }else{
@@ -95,8 +93,6 @@
         NSLog(@"init with request url %@ with type %@ withParam %@", url , type, param);
         self = [ super init]  ;
         
-        //_request = [NSURLRequest requestWithURL:[ NSURL URLWithString:url ] ];
-        
         if ( [ type  isEqualToString:@"GET"] ){
             _request = [self processGetUrlString:url withParam:param];
         }else if ([ type isEqualToString:@"POST"]){
@@ -113,7 +109,6 @@
     
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         if (appDelegate.connectionAvail == 2) {
-//            [ZCommonFunc showOffline];
             NSLog(@"connection Unavailable");
             return;
         }
@@ -175,27 +170,6 @@
         _connection = nil;
        
     }
-//-(void)alert {
-//    alert = [[UIView alloc] initWithFrame:CGRectMake(view.frame.size.width/2 - 100, view.frame.size.height/2 - 50, 200, 100)];
-//    alert.backgroundColor = [UIColor blackColor];
-//    
-//    UILabel *alertLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, alert.frame.size.width - 20, alert.frame.size.height - 20)];
-//    alertLabel.text = @"Unable to connect..retrying..";
-//    alertLabel.textAlignment = NSTextAlignmentCenter;
-//    alertLabel.textColor = [UIColor blackColor];
-//    alertLabel.backgroundColor = [UIColor clearColor];
-//    [alert addSubview:alertLabel];
-//    
-//    UIButton *okButton = [[UIButton alloc] initWithFrame:CGRectMake(alert.frame.size.width/2 - 50, alert.frame.size.height - 50, 100, 40)];
-//    [alert addSubview:okButton];
-//    [view addSubview:alert];
-////    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"Unable to connect..retrying.." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-////    [alert show];
-////    [self performSelector:@selector(dismissAlert:) withObject:alert afterDelay:1.0f];
-//}
-//
-
-
 
     -(NSData*)receivedData {
         return (NSData*)_data;

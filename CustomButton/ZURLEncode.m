@@ -38,18 +38,6 @@
     +(NSString*)addQueryStringToUrl:(NSString *)url params:(NSDictionary *)params{
         
         NSMutableString *urlWithQuerystring = [[NSMutableString alloc] initWithString:url];
-//        if(params){
-//            for(id key in params){
-//                NSString *sKey = [key description];
-//                NSString *sVal = [ [params objectForKey:key] description ];
-//                if( [urlWithQuerystring rangeOfString:@"?"].location == NSNotFound ){
-//                    [urlWithQuerystring appendFormat:@"?%@=%@", [ZURLEncode urlEscape:sKey], [ZURLEncode urlEscape:sVal]];
-//                }else{
-//                    [urlWithQuerystring appendFormat:@"&%@=%@", [ZURLEncode urlEscape:sKey], [ZURLEncode urlEscape:sVal]];
-//                }
-//             }
-//        }
-        
         if(params){
             [urlWithQuerystring appendString:@"?"];
             NSMutableArray *parts = [NSMutableArray array];
