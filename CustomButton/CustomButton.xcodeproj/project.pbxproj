@@ -17,7 +17,11 @@
 		54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7B1AB0A81E0057F736 /* CustomUiLabel.swift */; };
 		54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */; };
 		54B2DC821AB14F520057F736 /* SwiftTryCatch.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */; };
-		54B2DC851AB1A55B0057F736 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC841AB1A55B0057F736 /* Reachability.m */; };
+		54B2DC8F1AB2BC3E0057F736 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC8C1AB2BC3E0057F736 /* Reachability.m */; };
+		54B2DC901AB2BC3E0057F736 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC8E1AB2BC3E0057F736 /* MTReachabilityManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		54B2DC951AB2BFE70057F736 /* ZLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC941AB2BFE70057F736 /* ZLocation.swift */; };
+		54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC971AB2C2E50057F736 /* ZConnection.m */; };
+		54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC991AB2C2E50057F736 /* ZURLEncode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +51,15 @@
 		54B2DC7E1AB14F520057F736 /* SwiftTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftTryCatch.h; sourceTree = "<group>"; };
 		54B2DC7F1AB14F520057F736 /* SwiftTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftTryCatch.m; sourceTree = "<group>"; };
 		54B2DC801AB14F520057F736 /* SwiftTryCatch.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftTryCatch.podspec; sourceTree = "<group>"; };
-		54B2DC831AB1A55B0057F736 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		54B2DC841AB1A55B0057F736 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		54B2DC8B1AB2BC3E0057F736 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		54B2DC8C1AB2BC3E0057F736 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		54B2DC8D1AB2BC3E0057F736 /* MTReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTReachabilityManager.h; sourceTree = "<group>"; };
+		54B2DC8E1AB2BC3E0057F736 /* MTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTReachabilityManager.m; sourceTree = "<group>"; };
+		54B2DC941AB2BFE70057F736 /* ZLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLocation.swift; sourceTree = "<group>"; };
+		54B2DC961AB2C2E50057F736 /* ZConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZConnection.h; sourceTree = "<group>"; };
+		54B2DC971AB2C2E50057F736 /* ZConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZConnection.m; sourceTree = "<group>"; };
+		54B2DC981AB2C2E50057F736 /* ZURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZURLEncode.h; sourceTree = "<group>"; };
+		54B2DC991AB2C2E50057F736 /* ZURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZURLEncode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +83,7 @@
 		54B2DC471AB03B020057F736 = {
 			isa = PBXGroup;
 			children = (
+				54B2DC941AB2BFE70057F736 /* ZLocation.swift */,
 				98BC51AF1AB2B7C7000DE4A8 /* handlers */,
 				98BC51AD1AB2B776000DE4A8 /* UIControls */,
 				54B2DC521AB03B020057F736 /* CustomButton */,
@@ -131,10 +143,23 @@
 		54B2DC861AB1A58B0057F736 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				54B2DC831AB1A55B0057F736 /* Reachability.h */,
-				54B2DC841AB1A55B0057F736 /* Reachability.m */,
+				54B2DC8B1AB2BC3E0057F736 /* Reachability.h */,
+				54B2DC8C1AB2BC3E0057F736 /* Reachability.m */,
+				54B2DC8D1AB2BC3E0057F736 /* MTReachabilityManager.h */,
+				54B2DC8E1AB2BC3E0057F736 /* MTReachabilityManager.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		54B2DC9C1AB2C39A0057F736 /* connection */ = {
+			isa = PBXGroup;
+			children = (
+				54B2DC961AB2C2E50057F736 /* ZConnection.h */,
+				54B2DC971AB2C2E50057F736 /* ZConnection.m */,
+				54B2DC981AB2C2E50057F736 /* ZURLEncode.h */,
+				54B2DC991AB2C2E50057F736 /* ZURLEncode.m */,
+			);
+			name = connection;
 			sourceTree = "<group>";
 		};
 		98BC51AD1AB2B776000DE4A8 /* UIControls */ = {
@@ -159,6 +184,7 @@
 		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
+				54B2DC9C1AB2C39A0057F736 /* connection */,
 				98BC51AE1AB2B7B4000DE4A8 /* Exception */,
 				54B2DC861AB1A58B0057F736 /* Reachability */,
 			);
@@ -266,12 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B2DC7A1AB06C250057F736 /* CustomUITextField.swift in Sources */,
+				54B2DC951AB2BFE70057F736 /* ZLocation.swift in Sources */,
 				54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */,
 				54B2DC581AB03B020057F736 /* ViewController.swift in Sources */,
-				54B2DC851AB1A55B0057F736 /* Reachability.m in Sources */,
+				54B2DC8F1AB2BC3E0057F736 /* Reachability.m in Sources */,
+				54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
 				54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */,
+				54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */,
+				54B2DC901AB2BC3E0057F736 /* MTReachabilityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

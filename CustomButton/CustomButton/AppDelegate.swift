@@ -7,25 +7,24 @@
 //
 
 import UIKit
-//var reachability:Reachability?
-//let ZREACHABLEWITHWIFI = "reachableWithWIFI"
-//let ZNOTREACHABLE = "notReachable"
-//let ZREACHABLEWITHWWAN = "reachableWithWWAN"
-//var reachabilityStatus = ZREACHABLEWITHWWAN
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var internetReach:Reachability?
+    var connectionAvail:CInt = CInt()
 
+    var location:ZLocation = ZLocation()
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        internetReach = Reachability.reachabilityForInternetConnection()
-        internetReach?.startNotifier()
-        if internetReach != nil {
-            self.hasConnectivity()
-        }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hasConnectivity", name: kReachabilityChangedNotification, object: nil)
+//        // Override point for customization after application launch.
+//        internetReach = Reachability.reachabilityForInternetConnection()
+//        internetReach?.startNotifier()
+////        if internetReach != nil {
+////            self.hasConnectivity()
+////        }
+        MTReachabilityManager.sharedManager()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("hasConnectivity:"), name: kReachabilityChangedNotification, object: nil)
         window = UIWindow(frame: UIScreen.mainScreen().bounds);
         let navigationController = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = navigationController;
@@ -33,16 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-//    func statusChangeWithReachability(statusChangedWithReachability:Reachability) {
-//        var statusOfNetwork :NetworkStatus = statusChangedWithReachability.currentReachabilityStatus()
-//        println("networksatus: \(statusOfNetwork.value)")
+
+    func hasConnectivity(notification:NSNotification) {
+
+        var reachability:Reachability  = notification.object as Reachability;
         
-//    }
-    func hasConnectivity() -> Bool {
-        let reachability: Reachability = Reachability.reachabilityForInternetConnection()
-        let networkStatus: Int = reachability.currentReachabilityStatus().value
-        println("networkStatus: \(networkStatus)")
-        return networkStatus != 0
+        if reachability.isReachable(){
+            connectionAvail = 1
+        } else {
+            connectionAvail = 2
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {

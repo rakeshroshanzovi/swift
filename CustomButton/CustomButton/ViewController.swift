@@ -28,6 +28,15 @@ class ViewController: UIViewController {
         var labelDic:[String:AnyObject] = ["frame":NSValue(CGRect:CGRectMake(20, 380, 300, 50)),"view":self.view,"text":"Zovi label"];
         CustomUiLabel.zoviCustomLabel(labelDic)
     }
+    
+    func makeConnection() {
+        var connection:ZConnection = ZConnection( requestUrl: "http://www.google.com", type: "GET", withParam: nil)
+        connection.processRequsetWithCompletion({ (recieveddata:NSData!,httpStatusCode:NSInteger) in
+            println(httpStatusCode)
+            },{(error: NSError!) in
+                println("error")
+        })
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,6 +45,7 @@ class ViewController: UIViewController {
     func myFirstButtonAction(sender:UIButton!){
 
         sender.backgroundColor = UIColor.blueColor()
+        self.makeConnection()
     }
 
 }
