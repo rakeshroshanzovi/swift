@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ConfigLoader : NSObject {
+class ConfigLoader {
     
     class var resource: ConfigLoader { //computed type
         struct Static { // stored type
@@ -24,11 +24,16 @@ class ConfigLoader : NSObject {
     }
     
     let timeStamp: NSDate
-    let config: NSDictionary
+    var config = [:]
     
-    override init() {
-      self.timeStamp = NSDate()
-        self.config  = [ "hello" : "world"]
+    init() {
+        self.timeStamp = NSDate()
+        self.loadConfig()
+    }
+    
+    func loadConfig(){
+        // load config and spinner
+        println("loading config")
     }
     
 }
