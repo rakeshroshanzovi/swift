@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         location.initLocationManager()
         location.sendLocationUpdateafterEvery(600.0)
+        var contacts:getContact = getContact()
+        contacts.initContact()
+        
         return true
     }
 

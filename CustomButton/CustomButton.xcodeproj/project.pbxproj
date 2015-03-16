@@ -22,6 +22,9 @@
 		54B2DC951AB2BFE70057F736 /* ZLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC941AB2BFE70057F736 /* ZLocation.swift */; };
 		54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC971AB2C2E50057F736 /* ZConnection.m */; };
 		54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC991AB2C2E50057F736 /* ZURLEncode.m */; };
+		54B2DC9E1AB6A7C80057F736 /* getContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC9D1AB6A7C80057F736 /* getContact.swift */; };
+		54B2DCA01AB6A9CA0057F736 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */; };
+		54B2DCA21AB6A9D10057F736 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		54B2DC971AB2C2E50057F736 /* ZConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZConnection.m; sourceTree = "<group>"; };
 		54B2DC981AB2C2E50057F736 /* ZURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZURLEncode.h; sourceTree = "<group>"; };
 		54B2DC991AB2C2E50057F736 /* ZURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZURLEncode.m; sourceTree = "<group>"; };
+		54B2DC9D1AB6A7C80057F736 /* getContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getContact.swift; sourceTree = "<group>"; };
+		54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B2DCA21AB6A9D10057F736 /* AddressBookUI.framework in Frameworks */,
+				54B2DCA01AB6A9CA0057F736 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,9 @@
 		54B2DC471AB03B020057F736 = {
 			isa = PBXGroup;
 			children = (
+				54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */,
+				54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */,
+				54B2DC9D1AB6A7C80057F736 /* getContact.swift */,
 				54B2DC941AB2BFE70057F736 /* ZLocation.swift */,
 				98BC51AF1AB2B7C7000DE4A8 /* handlers */,
 				98BC51AD1AB2B776000DE4A8 /* UIControls */,
@@ -298,6 +309,7 @@
 				54B2DC8F1AB2BC3E0057F736 /* Reachability.m in Sources */,
 				54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
+				54B2DC9E1AB6A7C80057F736 /* getContact.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
 				54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */,
 				54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */,
