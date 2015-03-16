@@ -27,6 +27,7 @@
 		54B2DCA21AB6A9D10057F736 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */; };
 		98BC51BC1AB6C22A000DE4A8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51BB1AB6C22A000DE4A8 /* config.swift */; };
 		98BC51BF1AB6D1FB000DE4A8 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */; };
+		98BC51C21AB6D828000DE4A8 /* CarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51C11AB6D828000DE4A8 /* CarrierInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		98BC51BB1AB6C22A000DE4A8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		98BC51C11AB6D828000DE4A8 /* CarrierInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarrierInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
+				98BC51C01AB6D809000DE4A8 /* CarrierInfo */,
 				98BC51BD1AB6D1D7000DE4A8 /* DeviceInfo */,
 				54CF0FA11AB6C2F200FAB82E /* LocationManager */,
 				54CF0FA01AB6C2CC00FAB82E /* ContactsManager */,
@@ -238,6 +241,14 @@
 				98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */,
 			);
 			name = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		98BC51C01AB6D809000DE4A8 /* CarrierInfo */ = {
+			isa = PBXGroup;
+			children = (
+				98BC51C11AB6D828000DE4A8 /* CarrierInfo.swift */,
+			);
+			name = CarrierInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +355,7 @@
 				54B2DC951AB2BFE70057F736 /* ZLocation.swift in Sources */,
 				54B2DC811AB14F520057F736 /* SwiftTryCatch.m in Sources */,
 				54B2DC581AB03B020057F736 /* ViewController.swift in Sources */,
+				98BC51C21AB6D828000DE4A8 /* CarrierInfo.swift in Sources */,
 				54B2DC8F1AB2BC3E0057F736 /* Reachability.m in Sources */,
 				54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */,
 				98BC51BC1AB6C22A000DE4A8 /* config.swift in Sources */,
