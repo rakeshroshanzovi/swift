@@ -22,6 +22,7 @@
 		54B2DC951AB2BFE70057F736 /* ZLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC941AB2BFE70057F736 /* ZLocation.swift */; };
 		54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC971AB2C2E50057F736 /* ZConnection.m */; };
 		54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B2DC991AB2C2E50057F736 /* ZURLEncode.m */; };
+		98BC51B91AB6A8B1000DE4A8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51B81AB6A8B1000DE4A8 /* config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		54B2DC971AB2C2E50057F736 /* ZConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZConnection.m; sourceTree = "<group>"; };
 		54B2DC981AB2C2E50057F736 /* ZURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZURLEncode.h; sourceTree = "<group>"; };
 		54B2DC991AB2C2E50057F736 /* ZURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZURLEncode.m; sourceTree = "<group>"; };
+		98BC51B81AB6A8B1000DE4A8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,11 +186,20 @@
 		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
+				98BC51B71AB6A875000DE4A8 /* configloader */,
 				54B2DC9C1AB2C39A0057F736 /* connection */,
 				98BC51AE1AB2B7B4000DE4A8 /* Exception */,
 				54B2DC861AB1A58B0057F736 /* Reachability */,
 			);
 			name = handlers;
+			sourceTree = "<group>";
+		};
+		98BC51B71AB6A875000DE4A8 /* configloader */ = {
+			isa = PBXGroup;
+			children = (
+				98BC51B81AB6A8B1000DE4A8 /* config.swift */,
+			);
+			name = configloader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
 				54B2DC7C1AB0A81E0057F736 /* CustomUiLabel.swift in Sources */,
+				98BC51B91AB6A8B1000DE4A8 /* config.swift in Sources */,
 				54B2DC9A1AB2C2E50057F736 /* ZConnection.m in Sources */,
 				54B2DC901AB2BC3E0057F736 /* MTReachabilityManager.m in Sources */,
 			);

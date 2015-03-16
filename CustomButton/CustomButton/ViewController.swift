@@ -12,6 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var config1 = ConfigLoader.resource
+        var config2 = ConfigLoader.resource
+        
+        if config1 === config2{
+            println("hello dad! we are twins")
+            println("config\(config1.config)")
+        }else{
+            println("sorry wait for another 9 months")
+        }
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.whiteColor()
 //        var dic = ["abc":"rakesh"]
