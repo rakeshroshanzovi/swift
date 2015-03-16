@@ -10,6 +10,6 @@ import Foundation
 
 class DeviceInfo {
     class func getDeviceInfo() -> Dictionary<String, String>{
-        return ["id" : UIDevice.currentDevice().identifierForVendor.UUIDString]
+        return ["id" : UIDevice.currentDevice().identifierForVendor.UUIDString,  "os" : UIDevice.currentDevice().systemVersion as NSString]
     }
 }
