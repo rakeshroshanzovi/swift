@@ -28,7 +28,7 @@ class ConfigLoader {
     
     init() {
         self.timeStamp = NSDate()
-        self.loadConfig()
+        self.loadConfig()//load url
     }
     
     func loadConfig(){

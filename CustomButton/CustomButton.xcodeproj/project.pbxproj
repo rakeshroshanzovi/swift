@@ -95,8 +95,6 @@
 			children = (
 				54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */,
 				54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */,
-				54B2DC9D1AB6A7C80057F736 /* getContact.swift */,
-				54B2DC941AB2BFE70057F736 /* ZLocation.swift */,
 				98BC51AF1AB2B7C7000DE4A8 /* handlers */,
 				98BC51AD1AB2B776000DE4A8 /* UIControls */,
 				54B2DC521AB03B020057F736 /* CustomButton */,
@@ -175,6 +173,22 @@
 			name = connection;
 			sourceTree = "<group>";
 		};
+		54CF0FA01AB6C2CC00FAB82E /* ContactsManager */ = {
+			isa = PBXGroup;
+			children = (
+				54B2DC9D1AB6A7C80057F736 /* getContact.swift */,
+			);
+			name = ContactsManager;
+			sourceTree = "<group>";
+		};
+		54CF0FA11AB6C2F200FAB82E /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				54B2DC941AB2BFE70057F736 /* ZLocation.swift */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
 		98BC51AD1AB2B776000DE4A8 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +211,8 @@
 		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
+				54CF0FA11AB6C2F200FAB82E /* LocationManager */,
+				54CF0FA01AB6C2CC00FAB82E /* ContactsManager */,
 				98BC51BA1AB6C201000DE4A8 /* ConfigLoader */,
 				54B2DC9C1AB2C39A0057F736 /* connection */,
 				98BC51AE1AB2B7B4000DE4A8 /* Exception */,
