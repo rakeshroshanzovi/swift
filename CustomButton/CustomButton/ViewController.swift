@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         var config1 = ConfigLoader.resource
         var config2 = ConfigLoader.resource
         
+        println("device info\(DeviceInfo.getDeviceInfo())")
         if config1 === config2{
             println("hello dad! we are twins")
             println("config\(config1.config)")

@@ -26,6 +26,7 @@
 		54B2DCA01AB6A9CA0057F736 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */; };
 		54B2DCA21AB6A9D10057F736 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */; };
 		98BC51BC1AB6C22A000DE4A8 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51BB1AB6C22A000DE4A8 /* config.swift */; };
+		98BC51BF1AB6D1FB000DE4A8 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		54B2DC9F1AB6A9CA0057F736 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		54B2DCA11AB6A9D10057F736 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		98BC51BB1AB6C22A000DE4A8 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		98BC51AF1AB2B7C7000DE4A8 /* handlers */ = {
 			isa = PBXGroup;
 			children = (
+				98BC51BD1AB6D1D7000DE4A8 /* DeviceInfo */,
 				54CF0FA11AB6C2F200FAB82E /* LocationManager */,
 				54CF0FA01AB6C2CC00FAB82E /* ContactsManager */,
 				98BC51BA1AB6C201000DE4A8 /* ConfigLoader */,
@@ -227,6 +230,14 @@
 				98BC51BB1AB6C22A000DE4A8 /* config.swift */,
 			);
 			name = ConfigLoader;
+			sourceTree = "<group>";
+		};
+		98BC51BD1AB6D1D7000DE4A8 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				98BC51BE1AB6D1FB000DE4A8 /* DeviceInfo.swift */,
+			);
+			name = DeviceInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				54B2DC8F1AB2BC3E0057F736 /* Reachability.m in Sources */,
 				54B2DC9B1AB2C2E50057F736 /* ZURLEncode.m in Sources */,
 				98BC51BC1AB6C22A000DE4A8 /* config.swift in Sources */,
+				98BC51BF1AB6D1FB000DE4A8 /* DeviceInfo.swift in Sources */,
 				54B2DC561AB03B020057F736 /* AppDelegate.swift in Sources */,
 				54B2DC9E1AB6A7C80057F736 /* getContact.swift in Sources */,
 				54B2DC781AB044640057F736 /* ZCustomButton.swift in Sources */,
