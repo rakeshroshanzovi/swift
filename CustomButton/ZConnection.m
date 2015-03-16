@@ -110,6 +110,7 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         if (appDelegate.connectionAvail == 2) {
             NSLog(@"connection Unavailable");
+            //load alert
             return;
         }
         _responseReceivedBlock = [responseReceivedHandler copy];
