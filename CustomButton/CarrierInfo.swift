@@ -11,7 +11,8 @@ import CoreTelephony
 
 class CarrierInfo {
     class func getCarrierInfo() -> Dictionary<String, String>{
-        var carrier = CTCarrier()
+        var tNetwork = CTTelephonyNetworkInfo()
+        var carrier  = tNetwork.subscriberCellularProvider
         var carrier_name = ""
         var carrier_code = ""
         
@@ -21,7 +22,7 @@ class CarrierInfo {
         if (carrier.mobileNetworkCode  != nil ){
             carrier_code = carrier.mobileNetworkCode
         }
-        println( carrier.carrierName )
+        
         return ["name" : carrier_name, "code" : carrier_code ]
     }
 }
