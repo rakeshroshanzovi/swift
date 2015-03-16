@@ -10,19 +10,24 @@ import UIKit
 import CoreLocation
 
 var ZlocationManager = CLLocationManager()
-var seenError : Bool = false
+var seenError : Bool = true
 var locationFixAchieved : Bool = false
 var locationStatus : NSString = "Not Started"
+var timer:NSTimer = NSTimer()
 
 class ZLocation: NSObject,CLLocationManagerDelegate {
-    
+    var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
     
     func initLocationManager() {
         seenError = false
-        locationFixAchieved = false
+        locationFixAchieved = true
         ZlocationManager.delegate = self
         ZlocationManager.desiredAccuracy = kCLLocationAccuracyBest
-        ZlocationManager.requestWhenInUseAuthorization()
+        ZlocationManager.requestAlwaysAuthorization()
+        ZlocationManager.startUpdatingLocation()
+
+        
+       
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -37,54 +42,79 @@ class ZLocation: NSObject,CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        if (locationFixAchieved == false) {
-            locationFixAchieved = true
             var locationArray = locations as NSArray
             var locationObj = locationArray.lastObject as CLLocation
             var coord = locationObj.coordinate
             
+        
+        
+        if locationFixAchieved == true {
             println(coord.latitude)
             println(coord.longitude)
+            ZlocationManager = manager
+            self.hitServerWithData()
+        manager.stopUpdatingLocation()
         }
-        
     }
     
     func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-            var shouldIAllow = false
             
-            switch status {
-            case CLAuthorizationStatus.Restricted:
-                locationStatus = "Restricted Access to location"
-            case CLAuthorizationStatus.Denied:
-                locationStatus = "User denied access to location"
-            case CLAuthorizationStatus.NotDetermined:
-                locationStatus = "Status not determined"
-            default:
-                locationStatus = "Allowed to location Access"
-                shouldIAllow = true
-            }
-            if (shouldIAllow == true) {
-                NSLog("Location to Allowed")
-                // Start location services
-                ZlocationManager.startUpdatingLocation()
-                ZlocationManager.startMonitoringSignificantLocationChanges()
-            } else {
-                NSLog("Denied access: \(locationStatus)")
-            }
+            // App may no longer be authorized to obtain location
+            //information. Check status here and respond accordingly.
+            
     }
     
-    class func sendLocationUpdateafterEvery(time:CGFloat) {
-//        var timeToSet:NSTimeInterval = time
-//    var timer = NSTimer.scheduledTimerWithTimeInterval(timeToSet, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-    }
-    
-    func update() {
-        self.needLocationUpdate()
-    }
-    
-    func needLocationUpdate(){
+    func hitServerWithData() {
         locationFixAchieved = false
+        var param:[String:AnyObject] = ["action":"location","latitude":ZlocationManager.location.coordinate.latitude,"longitude":ZlocationManager.location.coordinate.longitude]
+        var connection:ZConnection = ZConnection( requestUrl: "http://54.179.30.135/trace", type: "GET", withParam: param)
+        connection.processRequsetWithCompletion({ (recieveddata:NSData!,httpStatusCode:NSInteger) in
+            println(httpStatusCode)
+            },{(error: NSError!) in
+                println("error")
+        })
+
     }
+    
+    func sendLocationUpdateafterEvery(time:NSTimeInterval) {
+    timer = NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: Selector("update:"), userInfo: nil, repeats: true)
+    }
+    
+    
+    func backgroundActivity(time:NSTimeInterval) {
+        backgroundTaskIdentifier = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({
+            UIApplication.sharedApplication().endBackgroundTask(self.backgroundTaskIdentifier!)
+        })
+        timer = NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: Selector("updateInBackGround:"), userInfo: nil, repeats: true)
+    }
+    
+    
+    func update(timer: NSTimer) {
+        locationFixAchieved = true
+        ZlocationManager.startUpdatingLocation()
+    }
+    
+    func updateInBackGround(timer: NSTimer) {
+         locationFixAchieved = true
+        ZlocationManager.delegate = self
+        ZlocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        ZlocationManager.requestAlwaysAuthorization()
+        ZlocationManager.startUpdatingLocation()
+    }
+    
+    
+    func forSignificantLocationChange(){
+        locationFixAchieved = false
+        ZlocationManager.delegate = self
+        ZlocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        ZlocationManager.requestAlwaysAuthorization()
+        ZlocationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    func toStopTimer() {
+        timer.invalidate()
+    }
+    
 }
 
